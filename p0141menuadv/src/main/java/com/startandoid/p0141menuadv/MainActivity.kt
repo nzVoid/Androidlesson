@@ -1,5 +1,6 @@
 package com.startandoid.p0141menuadv
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import android.widget.CheckBox
 import android.widget.TextView
 import java.lang.StringBuilder
+//import android.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,13 +22,9 @@ class MainActivity : AppCompatActivity() {
         chb = findViewById<CheckBox>(R.id.chbExtMenu)
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menu.add(0,1,0,"add")
-        menu.add(0,2,0,"edit")
-        menu.add(0,3,3,"delete")
-        menu.add(1,4,1,"copy")
-        menu.add(1,5,2,"paste")
-        menu.add(1,6,4,"exit")
+        menuInflater.inflate(R.layout.mymenu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -38,9 +36,9 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var sb:StringBuilder = StringBuilder()
         sb.append("Item Menu")
-        sb.append("\r\n groupId: " + String.)//valueOf(item.groupId))
-        sb.append("\r\n itemId: " + String.)//valueOf(item.itemId))
-        sb.append("\r\n order: " + String.)//valueOf(item.order))
+        sb.append("\r\n groupId: " + item.groupId.toString())//valueOf(item.groupId))
+        sb.append("\r\n itemId: " + item.itemId.toString())//valueOf(item.itemId))
+        sb.append("\r\n order: " + item.order.toString())//valueOf(item.order))
         sb.append("\r\n title: " + item.title)
         tv.setText(sb.toString())
         return super.onOptionsItemSelected(item)
