@@ -16,8 +16,5 @@ class ActivityDateEx : AppCompatActivity() {
 
         var tvDate: TextView = findViewById(R.id.tvDate)
         tvDate.setText(date)
-
-
-
     }
 }
