@@ -9,12 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidLessons">
-        <activity android:name=".ActivityDate">
+        <activity android:name=".ActivityDateEx" android:label="Data Extended">
             <intent-filter>
                 <action android:name="ru.startandroid.intent.action.showdate"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".ActivityDate" android:label="Data Basic">
+            <intent-filter>
+                <action android:name="ru.startandroid.intent.action.showdate" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".ActivityTime">
             <intent-filter>
                 <action android:name="ru.startandroid.intent.action.showtime" />
@@ -22,6 +32,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>
